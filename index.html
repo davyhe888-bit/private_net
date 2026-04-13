@@ -1,0 +1,1185 @@
+<html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>常用网站导航</title>
+  <!-- Tailwind CSS v3 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3b82f6',
+            secondary: '#64748b',
+            dark: {
+              bg: '#1e293b',
+              card: '#334155',
+              text: '#f8fafc'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.3s ease-in-out',
+            'slide-up': 'slideUp 0.4s ease-out',
+            'pulse-slow': 'pulse 3s infinite'
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' }
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .glass-effect {
+        @apply backdrop-blur-md bg-white/70 dark:bg-dark-card/70 border border-white/20 dark:border-dark-text/10;
+      }
+      
+      .card-hover {
+        @apply transition-all duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-1;
+      }
+      
+      .dragging {
+        @apply opacity-50 rotate-2 scale-105;
+      }
+      
+      .drag-over {
+        @apply border-2 border-primary border-dashed;
+      }
+      
+      .btn-primary {
+        @apply px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors duration-300 focus:ring-2 focus:ring-primary/50 focus:outline-none;
+      }
+      
+      .btn-secondary {
+        @apply px-4 py-2 bg-secondary text-white rounded-lg hover:bg-secondary/90 transition-colors duration-300 focus:ring-2 focus:ring-secondary/50 focus:outline-none;
+      }
+      
+      .input-field {
+        @apply px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-dark-card text-gray-800 dark:text-dark-text focus:ring-2 focus:ring-primary/50 focus:border-primary dark:focus:border-primary focus:outline-none transition-all duration-300;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 dark:bg-dark-bg text-gray-800 dark:text-dark-text min-h-screen transition-colors duration-300">
+  <div class="container mx-auto px-4 py-8 max-w-6xl">
+    <!-- 头部区域 -->
+    <header class="mb-8 animate-fade-in">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white text-xl font-bold">
+            <i class="fa fa-compass"></i>
+          </div>
+        </div>
+        
+        <div class="flex items-center gap-4 w-full md:w-auto">
+          <!-- 主题切换按钮 -->
+          <button id="themeToggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300" aria-label="切换主题">
+            <i class="fa fa-sun-o dark:hidden text-yellow-500 text-xl"></i>
+            <i class="fa fa-moon-o hidden dark:block text-blue-300 text-xl"></i>
+          </button>
+          
+          <!-- 添加网站按钮 -->
+          <button id="addSiteBtn" class="btn-primary flex items-center gap-2">
+            <i class="fa fa-plus"></i>
+            <span class="hidden sm:inline">添加网站</span>
+          </button>
+        </div>
+      </div>
+    </header>
+    
+
+    
+    <!-- 分类导航区域 -->
+    <main>
+      <!-- 常用网站 -->
+      <section class="mb-10 animate-slide-up">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-xl font-semibold flex items-center gap-2">
+            <i class="fa fa-star text-yellow-500"></i>
+            常用网站
+          </h2>
+          <button class="text-sm text-primary hover:text-primary/80 transition-colors duration-300 flex items-center gap-1 edit-category" data-category="常用网站">
+            <i class="fa fa-pencil"></i>
+            <span>编辑</span>
+          </button>
+        </div>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          <!-- 百度 -->
+          <a href="https://www.baidu.com" target="_blank" class="website-card glass-effect rounded-xl p-4 flex flex-col items-center text-center card-hover group">
+            <div class="w-12 h-12 rounded-lg bg-white dark:bg-dark-card flex items-center justify-center mb-3 shadow-sm group-hover:shadow-md transition-shadow duration-300">
+              <img src="https://p3-doubao-search-sign.byteimg.com/labis/78209efdc96ff1b2c7273fd103f168dc~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1791278240&amp;x-signature=tU%2B7TW28BhJ8KhN6E1JpJSqEKkk%3D" alt="百度" class="w-8 h-8 object-contain">
+            </div>
+            <h3 class="font-medium text-sm">百度</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-1">百度一下，你就知道</p>
+          </a>
+          
+          <!-- 谷歌 -->
+          <a href="https://www.google.com" target="_blank" class="website-card glass-effect rounded-xl p-4 flex flex-col items-center text-center card-hover group">
+            <div class="w-12 h-12 rounded-lg bg-white dark:bg-dark-card flex items-center justify-center mb-3 shadow-sm group-hover:shadow-md transition-shadow duration-300">
+              <img src="https://p3-doubao-search-sign.byteimg.com/isp-i18n-media/image/ed5bfa2d55ea4c15ad1fd00ea721a2eb~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1791278240&amp;x-signature=hBLmmS%2BEfxASUFkvcxXMRWQlWuw%3D" alt="谷歌" class="w-8 h-8 object-contain">
+            </div>
+            <h3 class="font-medium text-sm">谷歌</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-1">全球最大搜索引擎</p>
+          </a>
+          
+          <!-- 微信 -->
+          <a href="https://wx.qq.com" target="_blank" class="website-card glass-effect rounded-xl p-4 flex flex-col items-center text-center card-hover group">
+            <div class="w-12 h-12 rounded-lg bg-white dark:bg-dark-card flex items-center justify-center mb-3 shadow-sm group-hover:shadow-md transition-shadow duration-300">
+              <img src="https://p3-doubao-search-sign.byteimg.com/labis/cf87df407c01649f8f9f779a7cf45291~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1791278240&amp;x-signature=oJc482AiaOzREYhn3jkHLDFrvwg%3D" alt="微信" class="w-8 h-8 object-contain">
+            </div>
+            <h3 class="font-medium text-sm">微信</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-1">微信网页版</p>
+          </a>
+          
+          <!-- GitHub -->
+          <a href="https://github.com" target="_blank" class="website-card glass-effect rounded-xl p-4 flex flex-col items-center text-center card-hover group">
+            <div class="w-12 h-12 rounded-lg bg-white dark:bg-dark-card flex items-center justify-center mb-3 shadow-sm group-hover:shadow-md transition-shadow duration-300">
+              <img src="https://p26-doubao-search-sign.byteimg.com/labis/b1da7251ffd5758e9b9a34d4c56000a9~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1791278240&amp;x-signature=fWJI8WVOuudnOgWekCNhAh6NieM%3D" alt="GitHub" class="w-8 h-8 object-contain">
+            </div>
+            <h3 class="font-medium text-sm">GitHub</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-1">代码托管平台</p>
+          </a>
+          
+          <!-- B站 -->
+          <a href="https://www.bilibili.com" target="_blank" class="website-card glass-effect rounded-xl p-4 flex flex-col items-center text-center card-hover group">
+            <div class="w-12 h-12 rounded-lg bg-white dark:bg-dark-card flex items-center justify-center mb-3 shadow-sm group-hover:shadow-md transition-shadow duration-300">
+              <img src="https://p3-doubao-search-sign.byteimg.com/labis/ec262a4746dbb567cb6c7a81098de2e4~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1791278240&amp;x-signature=eIKCCMoCdRTLme9gGDzEtOxlCgo%3D" alt="B站" class="w-8 h-8 object-contain">
+            </div>
+            <h3 class="font-medium text-sm">B站</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-1">哔哩哔哩弹幕网</p>
+          </a>
+        </div>
+      </section>
+      
+      <!-- 社交媒体 -->
+      <section class="mb-10 animate-slide-up" style="animation-delay: 0.1s;">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-xl font-semibold flex items-center gap-2">
+            <i class="fa fa-comments text-blue-500"></i>
+            社交媒体
+          </h2>
+          <button class="text-sm text-primary hover:text-primary/80 transition-colors duration-300 flex items-center gap-1 edit-category" data-category="社交媒体">
+            <i class="fa fa-pencil"></i>
+            <span>编辑</span>
+          </button>
+        </div>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          <!-- 微博 -->
+          <a href="https://weibo.com" target="_blank" class="website-card glass-effect rounded-xl p-4 flex flex-col items-center text-center card-hover group">
+            <div class="w-12 h-12 rounded-lg bg-white dark:bg-dark-card flex items-center justify-center mb-3 shadow-sm group-hover:shadow-md transition-shadow duration-300">
+              <img src="https://p26-doubao-search-sign.byteimg.com/labis/6aa46434d4733c60de4f27bf4464f122~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1791278266&amp;x-signature=xy8aaIpoDk7pjh6MRRp7UAMJPPE%3D" alt="微博" class="w-8 h-8 object-contain">
+            </div>
+            <h3 class="font-medium text-sm">微博</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-1">中国社交媒体平台</p>
+          </a>
+          
+          <!-- 知乎 -->
+          <a href="https://www.zhihu.com" target="_blank" class="website-card glass-effect rounded-xl p-4 flex flex-col items-center text-center card-hover group">
+            <div class="w-12 h-12 rounded-lg bg-white dark:bg-dark-card flex items-center justify-center mb-3 shadow-sm group-hover:shadow-md transition-shadow duration-300">
+              <img src="https://p3-doubao-search-sign.byteimg.com/labis/77e7ef0590021203d2b42f6dc9570332~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1791278240&amp;x-signature=kQHJLLP4yriKrCyrbuGWZ2lpe0I%3D" alt="知乎" class="w-8 h-8 object-contain">
+            </div>
+            <h3 class="font-medium text-sm">知乎</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-1">知识分享平台</p>
+          </a>
+          
+          <!-- 抖音 -->
+          <a href="https://www.douyin.com" target="_blank" class="website-card glass-effect rounded-xl p-4 flex flex-col items-center text-center card-hover group">
+            <div class="w-12 h-12 rounded-lg bg-white dark:bg-dark-card flex items-center justify-center mb-3 shadow-sm group-hover:shadow-md transition-shadow duration-300">
+              <img src="https://p3-doubao-search-sign.byteimg.com/labis/90a45bd8410d5b685e7d3e8bc9d0ec6c~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1791278266&amp;x-signature=ww7FASbIi%2FeSHKS70ZDku05BzDc%3D" alt="抖音" class="w-8 h-8 object-contain">
+            </div>
+            <h3 class="font-medium text-sm">抖音</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-1">短视频社交平台</p>
+          </a>
+        </div>
+      </section>
+      
+      <!-- 购物网站 -->
+      <section class="mb-10 animate-slide-up" style="animation-delay: 0.2s;">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-xl font-semibold flex items-center gap-2">
+            <i class="fa fa-shopping-cart text-orange-500"></i>
+            购物网站
+          </h2>
+          <button class="text-sm text-primary hover:text-primary/80 transition-colors duration-300 flex items-center gap-1 edit-category" data-category="购物网站">
+            <i class="fa fa-pencil"></i>
+            <span>编辑</span>
+          </button>
+        </div>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          <!-- 淘宝 -->
+          <a href="https://www.taobao.com" target="_blank" class="website-card glass-effect rounded-xl p-4 flex flex-col items-center text-center card-hover group">
+            <div class="w-12 h-12 rounded-lg bg-white dark:bg-dark-card flex items-center justify-center mb-3 shadow-sm group-hover:shadow-md transition-shadow duration-300">
+              <img src="https://p3-doubao-search-sign.byteimg.com/labis/b32c43f45b2eec98c8ec404148cd1cd8~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1791278266&amp;x-signature=t%2FSsdBuTVYBU7bMG%2FmjQuMHvXEE%3D" alt="淘宝" class="w-8 h-8 object-contain">
+            </div>
+            <h3 class="font-medium text-sm">淘宝</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-1">中国最大电商平台</p>
+          </a>
+          
+          <!-- 京东 -->
+          <a href="https://www.jd.com" target="_blank" class="website-card glass-effect rounded-xl p-4 flex flex-col items-center text-center card-hover group">
+            <div class="w-12 h-12 rounded-lg bg-white dark:bg-dark-card flex items-center justify-center mb-3 shadow-sm group-hover:shadow-md transition-shadow duration-300">
+              <img src="https://p26-doubao-search-sign.byteimg.com/labis/b4c97fcc8501d26f40cb0b2131a4876a~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1791278266&amp;x-signature=Hh4OZ3BznIMX8%2BSZBSRX7GHepFE%3D" alt="京东" class="w-8 h-8 object-contain">
+            </div>
+            <h3 class="font-medium text-sm">京东</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-1">自营式电商平台</p>
+          </a>
+        </div>
+      </section>
+      
+      <!-- 娱乐网站 -->
+      <section class="mb-10 animate-slide-up" style="animation-delay: 0.3s;">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-xl font-semibold flex items-center gap-2">
+            <i class="fa fa-film text-purple-500"></i>
+            娱乐网站
+          </h2>
+          <button class="text-sm text-primary hover:text-primary/80 transition-colors duration-300 flex items-center gap-1 edit-category" data-category="娱乐网站">
+            <i class="fa fa-pencil"></i>
+            <span>编辑</span>
+          </button>
+        </div>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          <!-- 网易云音乐 -->
+          <a href="https://music.163.com" target="_blank" class="website-card glass-effect rounded-xl p-4 flex flex-col items-center text-center card-hover group">
+            <div class="w-12 h-12 rounded-lg bg-white dark:bg-dark-card flex items-center justify-center mb-3 shadow-sm group-hover:shadow-md transition-shadow duration-300">
+              <img src="https://p26-doubao-search-sign.byteimg.com/labis/2b6e6413f04a0ff2c0d9a6cd20dce25c~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1791278266&amp;x-signature=fgq2ihv2SSipRcY4Z%2FjCStPxdTE%3D" alt="网易云音乐" class="w-8 h-8 object-contain">
+            </div>
+            <h3 class="font-medium text-sm">网易云音乐</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-1">音乐流媒体平台</p>
+          </a>
+          
+          <!-- 腾讯视频 -->
+          <a href="https://v.qq.com" target="_blank" class="website-card glass-effect rounded-xl p-4 flex flex-col items-center text-center card-hover group">
+            <div class="w-12 h-12 rounded-lg bg-white dark:bg-dark-card flex items-center justify-center mb-3 shadow-sm group-hover:shadow-md transition-shadow duration-300">
+              <img src="https://p3-doubao-search-sign.byteimg.com/labis/3ef1cf39ea06f0a8f5f75b4e783e0122~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&amp;x-expires=1791278266&amp;x-signature=mtY1wolOEJwal8G8%2F4%2FAqZWAhiE%3D" alt="腾讯视频" class="w-8 h-8 object-contain">
+            </div>
+            <h3 class="font-medium text-sm">腾讯视频</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-1">视频流媒体平台</p>
+          </a>
+        </div>
+      </section>
+    </main>
+    
+    <!-- 底部区域 -->
+    <footer class="mt-16 text-center text-gray-500 dark:text-gray-400 text-sm animate-fade-in">
+      <p>© 2025 我的导航网站 | 让上网更高效</p>
+      <div class="flex justify-center gap-4 mt-4">
+        <button id="exportDataBtn" class="text-primary hover:text-primary/80 transition-colors duration-300 flex items-center gap-1">
+          <i class="fa fa-download"></i>
+          <span>导出数据</span>
+        </button>
+        <button id="importDataBtn" class="text-primary hover:text-primary/80 transition-colors duration-300 flex items-center gap-1">
+          <i class="fa fa-upload"></i>
+          <span>导入数据</span>
+        </button>
+        <input type="file" id="importDataInput" accept=".json" class="hidden">
+      </div>
+    </footer>
+  </div>
+  
+  <!-- 添加/编辑网站模态框 -->
+  <div id="siteModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 hidden animate-fade-in">
+    <div class="glass-effect rounded-xl p-6 w-full max-w-md animate-slide-up">
+      <div class="flex justify-between items-center mb-4">
+        <h3 id="modalTitle" class="text-xl font-semibold">添加网站</h3>
+        <button id="closeModalBtn" class="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full transition-colors duration-300">
+          <i class="fa fa-times"></i>
+        </button>
+      </div>
+      
+      <form id="siteForm">
+        <input type="hidden" id="siteId">
+        
+        <div class="mb-4">
+          <label for="siteName" class="block text-sm font-medium mb-2">网站名称</label>
+          <input type="text" id="siteName" class="input-field w-full" required="">
+        </div>
+        
+        <div class="mb-4">
+          <label for="siteUrl" class="block text-sm font-medium mb-2">网站链接</label>
+          <input type="url" id="siteUrl" class="input-field w-full" placeholder="https://" required="">
+        </div>
+        
+        <div class="mb-4">
+          <label for="siteDescription" class="block text-sm font-medium mb-2">网站描述</label>
+          <input type="text" id="siteDescription" class="input-field w-full">
+        </div>
+        
+        <div class="mb-4">
+          <label for="siteIcon" class="block text-sm font-medium mb-2">网站图标</label>
+          <input type="url" id="siteIcon" class="input-field w-full" placeholder="https://">
+        </div>
+        
+        <div class="mb-4">
+          <label for="siteCategory" class="block text-sm font-medium mb-2">分类</label>
+          <select id="siteCategory" class="input-field w-full">
+            <option value="常用网站">常用网站</option>
+            <option value="社交媒体">社交媒体</option>
+            <option value="购物网站">购物网站</option>
+            <option value="娱乐网站">娱乐网站</option>
+          </select>
+        </div>
+        
+        <div class="flex justify-end gap-3 mt-6">
+          <button type="button" id="cancelBtn" class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">
+            取消
+          </button>
+          <button type="submit" class="btn-primary">
+            <span id="submitBtnText">添加</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- 编辑分类模态框 -->
+  <div id="categoryModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 hidden animate-fade-in">
+    <div class="glass-effect rounded-xl p-6 w-full max-w-md animate-slide-up">
+      <div class="flex justify-between items-center mb-4">
+        <h3 id="categoryModalTitle" class="text-xl font-semibold">编辑分类</h3>
+        <button id="closeCategoryModalBtn" class="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full transition-colors duration-300">
+          <i class="fa fa-times"></i>
+        </button>
+      </div>
+      
+      <div class="mb-4">
+        <label for="newCategoryName" class="block text-sm font-medium mb-2">分类名称</label>
+        <input type="text" id="newCategoryName" class="input-field w-full">
+      </div>
+      
+      <div class="mb-6">
+        <label class="block text-sm font-medium mb-2">网站列表</label>
+        <div id="categorySitesList" class="max-h-60 overflow-y-auto space-y-2">
+          <!-- 网站列表将在这里动态生成 -->
+        </div>
+      </div>
+      
+      <div class="flex justify-between gap-3">
+        <button id="deleteCategoryBtn" class="px-4 py-2 border border-red-500 text-red-500 rounded-lg hover:bg-red-50 transition-colors duration-300">
+          删除分类
+        </button>
+        <div class="flex gap-3">
+          <button id="cancelCategoryBtn" class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">
+            取消
+          </button>
+          <button id="saveCategoryBtn" class="btn-primary">
+            保存
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 确认删除模态框 -->
+  <div id="confirmDeleteModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 hidden animate-fade-in">
+    <div class="glass-effect rounded-xl p-6 w-full max-w-sm animate-slide-up">
+      <h3 class="text-xl font-semibold mb-4">确认删除</h3>
+      <p id="confirmDeleteText" class="mb-6">你确定要删除这个网站吗？</p>
+      
+      <div class="flex justify-end gap-3">
+        <button id="cancelDeleteBtn" class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">
+          取消
+        </button>
+        <button id="confirmDeleteBtn" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors duration-300">
+          删除
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 通知提示 -->
+  <div id="notification" class="fixed top-4 right-4 glass-effect rounded-lg px-4 py-3 shadow-lg transform translate-x-full transition-transform duration-300 z-50 flex items-center gap-3 max-w-xs">
+    <div id="notificationIcon" class="w-6 h-6 rounded-full flex items-center justify-center">
+      <i id="notificationIconI" class="fa"></i>
+    </div>
+    <p id="notificationText" class="text-sm font-medium"></p>
+  </div>
+
+  <script>
+    // 初始化数据
+    let websites = [
+      {
+        id: '1',
+        name: '百度',
+        url: 'https://www.baidu.com',
+        description: '百度一下，你就知道',
+        icon: 'https://p3-doubao-search-sign.byteimg.com/labis/78209efdc96ff1b2c7273fd103f168dc~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1791278240&x-signature=tU%2B7TW28BhJ8KhN6E1JpJSqEKkk%3D',
+        category: '常用网站'
+      },
+      {
+        id: '2',
+        name: '谷歌',
+        url: 'https://www.google.com',
+        description: '全球最大搜索引擎',
+        icon: 'https://p3-doubao-search-sign.byteimg.com/isp-i18n-media/image/ed5bfa2d55ea4c15ad1fd00ea721a2eb~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1791278240&x-signature=hBLmmS%2BEfxASUFkvcxXMRWQlWuw%3D',
+        category: '常用网站'
+      },
+      {
+        id: '3',
+        name: '微信',
+        url: 'https://wx.qq.com',
+        description: '微信网页版',
+        icon: 'https://p3-doubao-search-sign.byteimg.com/labis/cf87df407c01649f8f9f779a7cf45291~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1791278240&x-signature=oJc482AiaOzREYhn3jkHLDFrvwg%3D',
+        category: '常用网站'
+      },
+      {
+        id: '4',
+        name: 'GitHub',
+        url: 'https://github.com',
+        description: '代码托管平台',
+        icon: 'https://p26-doubao-search-sign.byteimg.com/labis/b1da7251ffd5758e9b9a34d4c56000a9~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1791278240&x-signature=fWJI8WVOuudnOgWekCNhAh6NieM%3D',
+        category: '常用网站'
+      },
+      {
+        id: '5',
+        name: 'B站',
+        url: 'https://www.bilibili.com',
+        description: '哔哩哔哩弹幕网',
+        icon: 'https://p3-doubao-search-sign.byteimg.com/labis/ec262a4746dbb567cb6c7a81098de2e4~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1791278240&x-signature=eIKCCMoCdRTLme9gGDzEtOxlCgo%3D',
+        category: '常用网站'
+      },
+      {
+        id: '6',
+        name: '微博',
+        url: 'https://weibo.com',
+        description: '中国社交媒体平台',
+        icon: 'https://p26-doubao-search-sign.byteimg.com/labis/6aa46434d4733c60de4f27bf4464f122~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1791278266&x-signature=xy8aaIpoDk7pjh6MRRp7UAMJPPE%3D',
+        category: '社交媒体'
+      },
+      {
+        id: '7',
+        name: '知乎',
+        url: 'https://www.zhihu.com',
+        description: '知识分享平台',
+        icon: 'https://p3-doubao-search-sign.byteimg.com/labis/77e7ef0590021203d2b42f6dc9570332~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1791278240&x-signature=kQHJLLP4yriKrCyrbuGWZ2lpe0I%3D',
+        category: '社交媒体'
+      },
+      {
+        id: '8',
+        name: '抖音',
+        url: 'https://www.douyin.com',
+        description: '短视频社交平台',
+        icon: 'https://p3-doubao-search-sign.byteimg.com/labis/90a45bd8410d5b685e7d3e8bc9d0ec6c~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1791278266&x-signature=ww7FASbIi%2FeSHKS70ZDku05BzDc%3D',
+        category: '社交媒体'
+      },
+      {
+        id: '9',
+        name: '淘宝',
+        url: 'https://www.taobao.com',
+        description: '中国最大电商平台',
+        icon: 'https://p3-doubao-search-sign.byteimg.com/labis/b32c43f45b2eec98c8ec404148cd1cd8~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1791278266&x-signature=t%2FSsdBuTVYBU7bMG%2FmjQuMHvXEE%3D',
+        category: '购物网站'
+      },
+      {
+        id: '10',
+        name: '京东',
+        url: 'https://www.jd.com',
+        description: '自营式电商平台',
+        icon: 'https://p26-doubao-search-sign.byteimg.com/labis/b4c97fcc8501d26f40cb0b2131a4876a~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1791278266&x-signature=Hh4OZ3BznIMX8%2BSZBSRX7GHepFE%3D',
+        category: '购物网站'
+      },
+      {
+        id: '11',
+        name: '网易云音乐',
+        url: 'https://music.163.com',
+        description: '音乐流媒体平台',
+        icon: 'https://p26-doubao-search-sign.byteimg.com/labis/2b6e6413f04a0ff2c0d9a6cd20dce25c~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1791278266&x-signature=fgq2ihv2SSipRcY4Z%2FjCStPxdTE%3D',
+        category: '娱乐网站'
+      },
+      {
+        id: '12',
+        name: '腾讯视频',
+        url: 'https://v.qq.com',
+        description: '视频流媒体平台',
+        icon: 'https://p3-doubao-search-sign.byteimg.com/labis/3ef1cf39ea06f0a8f5f75b4e783e0122~tplv-be4g95zd3a-image.jpeg?lk3s=feb11e32&x-expires=1791278266&x-signature=mtY1wolOEJwal8G8%2F4%2FAqZWAhiE%3D',
+        category: '娱乐网站'
+      }
+    ];
+    
+    let categories = ['常用网站', '社交媒体', '购物网站', '娱乐网站'];
+    let currentEditSiteId = null;
+    let currentEditCategory = null;
+    let siteToDelete = null;
+    
+    // DOM 元素
+    const themeToggle = document.getElementById('themeToggle');
+    const addSiteBtn = document.getElementById('addSiteBtn');
+    const siteModal = document.getElementById('siteModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const siteForm = document.getElementById('siteForm');
+    const siteId = document.getElementById('siteId');
+    const siteName = document.getElementById('siteName');
+    const siteUrl = document.getElementById('siteUrl');
+    const siteDescription = document.getElementById('siteDescription');
+    const siteIcon = document.getElementById('siteIcon');
+    const siteCategory = document.getElementById('siteCategory');
+    const cancelBtn = document.getElementById('cancelBtn');
+    const submitBtnText = document.getElementById('submitBtnText');
+    const categoryModal = document.getElementById('categoryModal');
+    const categoryModalTitle = document.getElementById('categoryModalTitle');
+    const closeCategoryModalBtn = document.getElementById('closeCategoryModalBtn');
+    const newCategoryName = document.getElementById('newCategoryName');
+    const categorySitesList = document.getElementById('categorySitesList');
+    const deleteCategoryBtn = document.getElementById('deleteCategoryBtn');
+    const cancelCategoryBtn = document.getElementById('cancelCategoryBtn');
+    const saveCategoryBtn = document.getElementById('saveCategoryBtn');
+    const confirmDeleteModal = document.getElementById('confirmDeleteModal');
+    const confirmDeleteText = document.getElementById('confirmDeleteText');
+    const cancelDeleteBtn = document.getElementById('cancelDeleteBtn');
+    const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
+    const exportDataBtn = document.getElementById('exportDataBtn');
+    const importDataBtn = document.getElementById('importDataBtn');
+    const importDataInput = document.getElementById('importDataInput');
+    const notification = document.getElementById('notification');
+    const notificationIcon = document.getElementById('notificationIcon');
+    const notificationIconI = document.getElementById('notificationIconI');
+    const notificationText = document.getElementById('notificationText');
+    
+    // 初始化
+    document.addEventListener('DOMContentLoaded', () => {
+      // 加载本地存储的数据
+      loadData();
+      
+      // 初始化主题
+      initTheme();
+      
+      // 初始化事件监听
+      initEventListeners();
+      
+      // 渲染分类
+      renderCategories();
+    });
+    
+    // 加载本地存储的数据
+    function loadData() {
+      const savedWebsites = localStorage.getItem('navsite-websites');
+      const savedCategories = localStorage.getItem('navsite-categories');
+      
+      if (savedWebsites) {
+        websites = JSON.parse(savedWebsites);
+      }
+      
+      if (savedCategories) {
+        categories = JSON.parse(savedCategories);
+      }
+    }
+    
+    // 保存数据到本地存储
+    function saveData() {
+      localStorage.setItem('navsite-websites', JSON.stringify(websites));
+      localStorage.setItem('navsite-categories', JSON.stringify(categories));
+    }
+    
+    // 初始化主题
+    function initTheme() {
+      const savedTheme = localStorage.getItem('navsite-theme') || 'light';
+      
+      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+    
+    // 切换主题
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+      
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('navsite-theme', isDark ? 'dark' : 'light');
+      
+      showNotification(
+        isDark ? '已切换到暗黑模式' : '已切换到明亮模式',
+        'success'
+      );
+    }
+    
+    // 初始化事件监听
+    function initEventListeners() {
+      // 主题切换
+      themeToggle.addEventListener('click', toggleTheme);
+      
+      // 添加网站
+      addSiteBtn.addEventListener('click', () => openSiteModal());
+      
+      // 关闭模态框
+      closeModalBtn.addEventListener('click', closeSiteModal);
+      cancelBtn.addEventListener('click', closeSiteModal);
+      
+      // 提交网站表单
+      siteForm.addEventListener('submit', handleSiteFormSubmit);
+      
+      // 编辑分类
+      document.querySelectorAll('.edit-category').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const category = e.currentTarget.dataset.category;
+          openCategoryModal(category);
+        });
+      });
+      
+      // 关闭分类模态框
+      closeCategoryModalBtn.addEventListener('click', closeCategoryModal);
+      cancelCategoryBtn.addEventListener('click', closeCategoryModal);
+      
+      // 保存分类
+      saveCategoryBtn.addEventListener('click', handleCategorySave);
+      
+      // 删除分类
+      deleteCategoryBtn.addEventListener('click', () => {
+        confirmDeleteModal.classList.remove('hidden');
+        confirmDeleteText.textContent = `你确定要删除"${currentEditCategory}"分类吗？分类下的所有网站也将被删除。`;
+        siteToDelete = { type: 'category', name: currentEditCategory };
+      });
+      
+      // 关闭确认删除模态框
+      cancelDeleteBtn.addEventListener('click', closeConfirmDeleteModal);
+      
+      // 确认删除
+      confirmDeleteBtn.addEventListener('click', handleConfirmDelete);
+      
+      // 导出数据
+      exportDataBtn.addEventListener('click', exportData);
+      
+      // 导入数据
+      importDataBtn.addEventListener('click', () => importDataInput.click());
+      importDataInput.addEventListener('change', handleImportData);
+      
+      // 点击模态框外部关闭
+      siteModal.addEventListener('click', (e) => {
+        if (e.target === siteModal) closeSiteModal();
+      });
+      
+      categoryModal.addEventListener('click', (e) => {
+        if (e.target === categoryModal) closeCategoryModal();
+      });
+      
+      confirmDeleteModal.addEventListener('click', (e) => {
+        if (e.target === confirmDeleteModal) closeConfirmDeleteModal();
+      });
+      
+      // 键盘事件
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeSiteModal();
+          closeCategoryModal();
+          closeConfirmDeleteModal();
+        }
+      });
+    }
+    
+    // 渲染分类
+    function renderCategories() {
+      // 清空现有分类
+      const mainElement = document.querySelector('main');
+      mainElement.innerHTML = '';
+      
+      // 为每个分类创建一个部分
+      categories.forEach((category, index) => {
+        const categoryWebsites = websites.filter(site => site.category === category);
+        
+        if (categoryWebsites.length === 0) return;
+        
+        const section = document.createElement('section');
+        section.className = 'mb-10 animate-slide-up';
+        section.style.animationDelay = `${0.1 * index}s`;
+        
+        section.innerHTML = `
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-semibold flex items-center gap-2">
+              <i class="fa ${getCategoryIcon(category)}"></i>
+              ${category}
+            </h2>
+            <button class="text-sm text-primary hover:text-primary/80 transition-colors duration-300 flex items-center gap-1 edit-category" data-category="${category}">
+              <i class="fa fa-pencil"></i>
+              <span>编辑</span>
+            </button>
+          </div>
+          
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            ${categoryWebsites.map(site => `
+              <div class="website-card glass-effect rounded-xl p-4 flex flex-col items-center text-center card-hover group relative cursor-move" draggable="true" data-id="${site.id}">
+                <div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex gap-1">
+                  <button class="p-1 bg-white dark:bg-dark-card rounded-full shadow-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300 edit-site" data-id="${site.id}">
+                    <i class="fa fa-pencil text-xs text-gray-600 dark:text-gray-400"></i>
+                  </button>
+                  <button class="p-1 bg-white dark:bg-dark-card rounded-full shadow-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300 delete-site" data-id="${site.id}">
+                    <i class="fa fa-trash text-xs text-red-500"></i>
+                  </button>
+                </div>
+                <a href="${site.url}" target="_blank" class="flex flex-col items-center w-full">
+                  <div class="w-12 h-12 rounded-lg bg-white dark:bg-dark-card flex items-center justify-center mb-3 shadow-sm group-hover:shadow-md transition-shadow duration-300">
+                    <img src="${site.icon || getFaviconUrl(site.url)}" alt="${site.name}" class="w-8 h-8 object-contain">
+                  </div>
+                  <h3 class="font-medium text-sm">${site.name}</h3>
+                  <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-1">${site.description || ''}</p>
+                </a>
+              </div>
+            `).join('')}
+          </div>
+        `;
+        
+        mainElement.appendChild(section);
+      });
+      
+      // 添加事件监听
+      document.querySelectorAll('.edit-category').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const category = e.currentTarget.dataset.category;
+          openCategoryModal(category);
+        });
+      });
+      
+      document.querySelectorAll('.edit-site').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const siteId = e.currentTarget.dataset.id;
+          editSite(siteId);
+        });
+      });
+      
+      document.querySelectorAll('.delete-site').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const siteId = e.currentTarget.dataset.id;
+          confirmDeleteSite(siteId);
+        });
+      });
+      
+      // 添加拖拽事件监听
+      addDragAndDropListeners();
+    }
+    
+    // 获取分类图标
+    function getCategoryIcon(category) {
+      switch (category) {
+        case '常用网站':
+          return 'fa-star text-yellow-500';
+        case '社交媒体':
+          return 'fa-comments text-blue-500';
+        case '购物网站':
+          return 'fa-shopping-cart text-orange-500';
+        case '娱乐网站':
+          return 'fa-film text-purple-500';
+        default:
+          return 'fa-folder text-gray-500';
+      }
+    }
+    
+    // 获取网站图标
+    function getFaviconUrl(url) {
+      try {
+        const parsedUrl = new URL(url);
+        return `${parsedUrl.origin}/favicon.ico`;
+      } catch (e) {
+        return 'https://via.placeholder.com/32';
+      }
+    }
+    
+
+    
+    // 打开网站模态框
+    function openSiteModal(siteId = null) {
+      currentEditSiteId = siteId;
+      
+      if (siteId) {
+        const site = websites.find(s => s.id === siteId);
+        
+        if (site) {
+          modalTitle.textContent = '编辑网站';
+          submitBtnText.textContent = '保存';
+          
+          document.getElementById('siteId').value = site.id;
+          document.getElementById('siteName').value = site.name;
+          document.getElementById('siteUrl').value = site.url;
+          document.getElementById('siteDescription').value = site.description || '';
+          document.getElementById('siteIcon').value = site.icon || '';
+          document.getElementById('siteCategory').value = site.category;
+        }
+      } else {
+        modalTitle.textContent = '添加网站';
+        submitBtnText.textContent = '添加';
+        siteForm.reset();
+      }
+      
+      siteModal.classList.remove('hidden');
+      document.getElementById('siteName').focus();
+    }
+    
+    // 关闭网站模态框
+    function closeSiteModal() {
+      siteModal.classList.add('hidden');
+      siteForm.reset();
+      currentEditSiteId = null;
+    }
+    
+    // 处理网站表单提交
+    function handleSiteFormSubmit(e) {
+      e.preventDefault();
+      
+      const id = document.getElementById('siteId').value || generateId();
+      const name = document.getElementById('siteName').value;
+      const url = document.getElementById('siteUrl').value;
+      const description = document.getElementById('siteDescription').value;
+      const icon = document.getElementById('siteIcon').value;
+      const category = document.getElementById('siteCategory').value;
+      
+      // 确保 URL 以 http:// 或 https:// 开头
+      let formattedUrl = url;
+      if (!url.startsWith('http://') && !url.startsWith('https://')) {
+        formattedUrl = 'https://' + url;
+      }
+      
+      if (currentEditSiteId) {
+        // 编辑现有网站
+        const index = websites.findIndex(s => s.id === currentEditSiteId);
+        
+        if (index !== -1) {
+          websites[index] = {
+            id,
+            name,
+            url: formattedUrl,
+            description,
+            icon,
+            category
+          };
+          
+          showNotification('网站已更新', 'success');
+        }
+      } else {
+        // 添加新网站
+        websites.push({
+          id,
+          name,
+          url: formattedUrl,
+          description,
+          icon,
+          category
+        });
+        
+        showNotification('网站已添加', 'success');
+      }
+      
+      saveData();
+      renderCategories();
+      closeSiteModal();
+    }
+    
+    // 生成唯一 ID
+    function generateId() {
+      return Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
+    }
+    
+    // 编辑网站
+    function editSite(siteId) {
+      openSiteModal(siteId);
+    }
+    
+    // 确认删除网站
+    function confirmDeleteSite(siteId) {
+      const site = websites.find(s => s.id === siteId);
+      
+      if (site) {
+        confirmDeleteModal.classList.remove('hidden');
+        confirmDeleteText.textContent = `你确定要删除"${site.name}"吗？`;
+        siteToDelete = { type: 'site', id: siteId };
+      }
+    }
+    
+    // 关闭确认删除模态框
+    function closeConfirmDeleteModal() {
+      confirmDeleteModal.classList.add('hidden');
+      siteToDelete = null;
+    }
+    
+    // 处理确认删除
+    function handleConfirmDelete() {
+      if (siteToDelete.type === 'site') {
+        websites = websites.filter(s => s.id !== siteToDelete.id);
+        showNotification('网站已删除', 'success');
+      } else if (siteToDelete.type === 'category') {
+        websites = websites.filter(s => s.category !== siteToDelete.name);
+        categories = categories.filter(c => c !== siteToDelete.name);
+        showNotification('分类已删除', 'success');
+      }
+      
+      saveData();
+      renderCategories();
+      closeConfirmDeleteModal();
+      closeCategoryModal();
+    }
+    
+    // 打开分类模态框
+    function openCategoryModal(category) {
+      currentEditCategory = category;
+      
+      categoryModalTitle.textContent = `编辑"${category}"分类`;
+      newCategoryName.value = category;
+      
+      const categoryWebsites = websites.filter(site => site.category === category);
+      
+      categorySitesList.innerHTML = categoryWebsites.map(site => `
+        <div class="flex items-center justify-between p-2 bg-white/50 dark:bg-dark-bg/50 rounded-lg">
+          <div class="flex items-center gap-2">
+            <div class="w-6 h-6 rounded bg-white dark:bg-dark-card flex items-center justify-center">
+              <img src="${site.icon || getFaviconUrl(site.url)}" alt="${site.name}" class="w-4 h-4 object-contain">
+            </div>
+            <span class="text-sm">${site.name}</span>
+          </div>
+          <button class="text-red-500 hover:text-red-600 transition-colors duration-300 delete-site-in-category" data-id="${site.id}">
+            <i class="fa fa-trash"></i>
+          </button>
+        </div>
+      `).join('');
+      
+      // 如果分类下没有网站，显示提示
+      if (categoryWebsites.length === 0) {
+        categorySitesList.innerHTML = `
+          <div class="text-center py-4 text-gray-500 dark:text-gray-400">
+            <p>此分类下没有网站</p>
+          </div>
+        `;
+      }
+      
+      categoryModal.classList.remove('hidden');
+      
+      // 添加事件监听
+      document.querySelectorAll('.delete-site-in-category').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const siteId = e.currentTarget.dataset.id;
+          confirmDeleteSite(siteId);
+        });
+      });
+    }
+    
+    // 关闭分类模态框
+    function closeCategoryModal() {
+      categoryModal.classList.add('hidden');
+      currentEditCategory = null;
+    }
+    
+    // 处理分类保存
+    function handleCategorySave() {
+      const newName = newCategoryName.value.trim();
+      
+      if (!newName) {
+        showNotification('分类名称不能为空', 'error');
+        return;
+      }
+      
+      if (newName !== currentEditCategory) {
+        // 检查分类名称是否已存在
+        if (categories.includes(newName)) {
+          showNotification('分类名称已存在', 'error');
+          return;
+        }
+        
+        // 更新分类名称
+        const index = categories.indexOf(currentEditCategory);
+        
+        if (index !== -1) {
+          categories[index] = newName;
+          
+          // 更新该分类下的所有网站
+          websites.forEach(site => {
+            if (site.category === currentEditCategory) {
+              site.category = newName;
+            }
+          });
+          
+          showNotification('分类已更新', 'success');
+        }
+      }
+      
+      saveData();
+      renderCategories();
+      closeCategoryModal();
+    }
+    
+    // 导出数据
+    function exportData() {
+      const data = {
+        websites,
+        categories,
+        exportDate: new Date().toISOString()
+      };
+      
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `navsite-data-${new Date().toISOString().split('T')[0]}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      
+      showNotification('数据已导出', 'success');
+    }
+    
+    // 处理导入数据
+    function handleImportData(e) {
+      const file = e.target.files[0];
+      
+      if (!file) return;
+      
+      const reader = new FileReader();
+      
+      reader.onload = (event) => {
+        try {
+          const data = JSON.parse(event.target.result);
+          
+          if (data.websites && Array.isArray(data.websites)) {
+            websites = data.websites;
+          }
+          
+          if (data.categories && Array.isArray(data.categories)) {
+            categories = data.categories;
+          }
+          
+          saveData();
+          renderCategories();
+          showNotification('数据已导入', 'success');
+        } catch (error) {
+          showNotification('导入失败：无效的数据格式', 'error');
+        }
+      };
+      
+      reader.readAsText(file);
+      e.target.value = '';
+    }
+    
+    // 显示通知
+    function showNotification(message, type = 'info') {
+      // 设置通知类型
+      if (type === 'success') {
+        notificationIcon.className = 'w-6 h-6 rounded-full bg-green-100 text-green-500 flex items-center justify-center';
+        notificationIconI.className = 'fa fa-check';
+      } else if (type === 'error') {
+        notificationIcon.className = 'w-6 h-6 rounded-full bg-red-100 text-red-500 flex items-center justify-center';
+        notificationIconI.className = 'fa fa-times';
+      } else {
+        notificationIcon.className = 'w-6 h-6 rounded-full bg-blue-100 text-blue-500 flex items-center justify-center';
+        notificationIconI.className = 'fa fa-info';
+      }
+      
+      // 设置通知文本
+      notificationText.textContent = message;
+      
+      // 显示通知
+      notification.classList.remove('translate-x-full');
+      
+      // 3秒后隐藏通知
+      setTimeout(() => {
+        notification.classList.add('translate-x-full');
+      }, 3000);
+    }
+    
+    // 添加拖拽事件监听
+    function addDragAndDropListeners() {
+      const draggableCards = document.querySelectorAll('.website-card[draggable="true"]');
+      
+      draggableCards.forEach(card => {
+        // 拖拽开始
+        card.addEventListener('dragstart', (e) => {
+          card.classList.add('dragging');
+          e.dataTransfer.setData('text/plain', card.dataset.id);
+          e.dataTransfer.effectAllowed = 'move';
+        });
+        
+        // 拖拽结束
+        card.addEventListener('dragend', () => {
+          card.classList.remove('dragging');
+          // 移除所有拖拽提示样式
+          document.querySelectorAll('.drag-over').forEach(el => {
+            el.classList.remove('drag-over');
+          });
+        });
+        
+        // 拖拽进入目标区域
+        card.addEventListener('dragenter', (e) => {
+          if (!card.classList.contains('dragging')) {
+            card.classList.add('drag-over');
+          }
+          e.preventDefault();
+        });
+        
+        // 拖拽在目标区域移动
+        card.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          e.dataTransfer.dropEffect = 'move';
+        });
+        
+        // 拖拽离开目标区域
+        card.addEventListener('dragleave', (e) => {
+          // 检查是否真的离开了卡片区域
+          if (!card.contains(e.relatedTarget)) {
+            card.classList.remove('drag-over');
+          }
+        });
+        
+        // 拖拽放置
+        card.addEventListener('drop', (e) => {
+          e.preventDefault();
+          
+          const draggedId = e.dataTransfer.getData('text/plain');
+          const targetId = card.dataset.id;
+          
+          if (draggedId !== targetId) {
+            // 找到拖拽的网站和目标网站
+            const draggedIndex = websites.findIndex(site => site.id === draggedId);
+            const targetIndex = websites.findIndex(site => site.id === targetId);
+            
+            if (draggedIndex !== -1 && targetIndex !== -1) {
+              // 获取拖拽的网站对象
+              const draggedSite = websites[draggedIndex];
+              
+              // 确保两个网站在同一分类下
+              if (draggedSite.category === websites[targetIndex].category) {
+                // 从数组中移除拖拽的网站
+                websites.splice(draggedIndex, 1);
+                
+                // 在目标位置插入拖拽的网站
+                websites.splice(targetIndex, 0, draggedSite);
+                
+                // 保存数据并重新渲染
+                saveData();
+                renderCategories();
+                
+                showNotification('网站位置已调整', 'success');
+              } else {
+                showNotification('只能在同一分类内调整网站位置', 'error');
+              }
+            }
+          }
+          
+          card.classList.remove('drag-over');
+        });
+      });
+    }
+  </script>
+
+</body></html>
