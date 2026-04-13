@@ -1,0 +1,114 @@
+[
+  {
+    "category": "常用网站",
+    "icon": "fa-star",
+    "color": "text-yellow-500",
+    "websites": [
+      {
+        "id": "1",
+        "name": "百度",
+        "desc": "百度一下，你就知道",
+        "url": "https://www.baidu.com",
+        "icon": "https://favicon.im/baidu.com"
+      },
+      {
+        "id": "2",
+        "name": "谷歌",
+        "desc": "全球最大搜索引擎",
+        "url": "https://www.google.com",
+        "icon": "https://favicon.im/google.com"
+      },
+      {
+        "id": "3",
+        "name": "微信",
+        "desc": "微信网页版",
+        "url": "https://wx.qq.com",
+        "icon": "https://favicon.im/weixin.qq.com"
+      },
+      {
+        "id": "4",
+        "name": "GitHub",
+        "desc": "代码托管平台",
+        "url": "https://github.com",
+        "icon": "https://favicon.im/github.com"
+      },
+      {
+        "id": "5",
+        "name": "B站",
+        "desc": "哔哩哔哩弹幕网",
+        "url": "https://www.bilibili.com",
+        "icon": "https://favicon.im/bilibili.com"
+      }
+    ]
+  },
+  {
+    "category": "社交媒体",
+    "icon": "fa-circle",
+    "color": "text-blue-500",
+    "websites": [
+      {
+        "id": "6",
+        "name": "微博",
+        "desc": "中国社交媒体平台",
+        "url": "https://weibo.com",
+        "icon": "https://favicon.im/weibo.com"
+      },
+      {
+        "id": "7",
+        "name": "知乎",
+        "desc": "知识分享平台",
+        "url": "https://www.zhihu.com",
+        "icon": "https://favicon.im/zhihu.com"
+      },
+      {
+        "id": "8",
+        "name": "抖音",
+        "desc": "短视频社交平台",
+        "url": "https://www.douyin.com",
+        "icon": "https://favicon.im/douyin.com"
+      }
+    ]
+  },
+  {
+    "category": "购物网站",
+    "icon": "fa-shopping-cart",
+    "color": "text-orange-500",
+    "websites": [
+      {
+        "id": "9",
+        "name": "淘宝",
+        "desc": "中国最大电商平台",
+        "url": "https://www.taobao.com",
+        "icon": "https://favicon.im/taobao.com"
+      },
+      {
+        "id": "10",
+        "name": "京东",
+        "desc": "自营式电商平台",
+        "url": "https://www.jd.com",
+        "icon": "https://favicon.im/jd.com"
+      }
+    ]
+  },
+  {
+    "category": "娱乐网站",
+    "icon": "fa-gamepad",
+    "color": "text-purple-500",
+    "websites": [
+      {
+        "id": "11",
+        "name": "网易云音乐",
+        "desc": "高品质音乐平台",
+        "url": "https://music.163.com",
+        "icon": "https://favicon.im/music.163.com"
+      },
+      {
+        "id": "12",
+        "name": "腾讯视频",
+        "desc": "综合视频平台",
+        "url": "https://v.qq.com",
+        "icon": "https://favicon.im/v.qq.com"
+      }
+    ]
+  }
+]
